@@ -5,8 +5,21 @@ const Schema = use('Schema')
 
 class TeamSchema extends Schema {
   up () {
-    this.create('teams', (table) => {
+    this.create('teams', table => {
       table.increments()
+      table.string('name').notNullable()
+      table
+        .integer('team_id')
+        .unsigned()
+        .notNullable()
+        .references('id')
+        .inTable('teams')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE')
+      table
+        .string('slug')
+        .notNullable()
+        .unique()
       table.timestamps()
     })
   }
