@@ -1,20 +1,18 @@
 module.exports = {
   env: {
     es6: true,
-    node: true
+    node: true,
   },
-  extends: [
-    'standard'
-  ],
+  extends: ['standard'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
-    "use": false
+    use: false,
   },
+
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: 'module'
+    sourceType: 'module',
   },
-  rules: {
-  }
-}
+  rules: {},
+};
