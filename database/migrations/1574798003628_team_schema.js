@@ -9,11 +9,11 @@ class TeamSchema extends Schema {
       table.increments()
       table.string('name').notNullable()
       table
-        .integer('team_id')
+        .integer('user_id')
         .unsigned()
         .notNullable()
         .references('id')
-        .inTable('teams')
+        .inTable('users')
         .onUpdate('CASCADE')
         .onDelete('CASCADE')
       table
